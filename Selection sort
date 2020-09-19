@@ -1,0 +1,48 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+
+void selection_sort(int *arr,int size)
+{
+   // int max=1000000;
+    int j;
+    int min;
+    for(int i=0;i<size-1;i++)
+    {
+        min=i;
+        for( j=i+1;j<size;j++)
+        {
+            if(arr[min]>arr[j])
+            min=j;
+        }
+        int temp;
+        temp=arr[i];
+        arr[i]=arr[min];
+        arr[min]=temp;
+       // printf("%d",arr[min]);
+    }
+}
+
+void display(int *arr,int size){
+for(int i=0;i<size;i++)
+{
+    printf("%d",arr[i]);
+}
+}
+
+
+int main()
+{
+    int arr[10]={1,5,6,7,2,3,9,8,10,16};
+    int size;
+    size=sizeof(arr)/sizeof(arr[0]);
+    selection_sort(arr,size);
+    display(arr,size);
+    return 0;
+}
